@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+
+     <!-- Bootstrap and Jquery UI stylesheets -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+     <link rel="stylesheet" href="css/main.css">
+
+     <script src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        
+        var socketio = io.connect();
+        socketio.on("message_to_client",function(data) {
+
+            if(data == '') {
+                console.log(data);
+            }
+           let text_container = document.createElement('div');
+           text_container.classList.add('message-text');
+           text_container.appendChild(document.createTextNode(data['message']));
+
+           document.getElementById("chatlog").appendChild(text_container);
+
+        });
+  
+        function sendMessage(){
+           var msg = document.getElementById("global-chat-input").value;
+           socketio.emit("message_to_server", {message:msg});
+        }
+        
+    </script>
+
+   
+
+</head>
+<body>
+
+    <!-- Navbar to get to other pages -->
+    <nav class="navbar dark-background">
+        <div class="container-fluid">
+
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-4" style="text-align: center;">
+                <h1 class="main-color centered">Chatroom</h1>
+            </div>
+
+            <div class="col-sm-4" style="text-align: right;">
+                <!-- Login button -->
+                <div id="show-login-btn">
+                    <div class="input-group">
+                        <input type="text" class="form-control inputs" id="username-input" placeholder="Username">
+                        <div class="input-group-append">
+                            <button type="button" id="set-username-btn" class="btn dark-blue-btn">Set Username</button>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Logout button -->
+                <div id="show-logout-btn">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text inputs-nm" id="show-username">Welcome USERNAME</span>
+                        </div>
+                        <button id="logout-btn" class="btn dark-blue-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="global-chat-container" class="col-sm-6">
+                <div id="global-chat-container-p">
+                    <div id="global-chat-title-container">
+                        <h3 id="global-chat-title" class="main-color centered">Chat With Online People Right Now!</h3>
+                    </div>
+                    <div id="global-chat-inputs" class="input-group mb-3">
+                        <input class="form-control" type="text" id="global-chat-input"/>
+                        <button class="btn dark-blue-btn" type="button" onclick="sendMessage()">send</button>
+                    </div>
+                    <div id="global-chat">
+                        <div id="chatlog"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="container col-sm-6">
+                <div class="create-room-container">            
+                    <h3 class="main-color centered">Create A Chat Room</h3>          
+                      <div class="input-group">
+                        <input type="text" class="form-control inputs" placeholder="Chatroom Name">
+                        <div class="input-group-append">
+                          <button type="button" class="btn dark-blue-btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item">Public</a>
+                            <a class="dropdown-item">Private</a>
+                          </div>
+                          <button type="button" class="btn dark-blue-btn">Create</button>
+                        </div>
+                      </div>
+                </div>
+                <div id="private-chat-rooms">
+                    <h3 class="main-color centered">Join a Private Chatroom</h3>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text inputs" id="">Room Name</span>
+                        </div>
+                        <input type="text" class="form-control inputs">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text inputs" id="">Password</span>
+                        </div>
+                        <input type="text" class="form-control inputs">
+                    </div>
+                   
+                    <button type="button" class="btn btn-block dark-blue-btn">Join</button>
+                </div>
+                <div class="public-chat-rooms-title-container">
+                    <h3 class="main-color centered">Join A Public Chatroom</h3>
+                </div>
+                <div id="public-chat-rooms">
+                    <div class="container-fluid chatroom">
+                        <div class="row">
+                            <div class="col-sm-6 room-name">
+                                <span class="main-color">Test Room</span>
+                            </div>
+                            <div class="col-sm-6 room-people">
+                                <span class="main-color">There are 5 people online</span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="container-fluid chatroom">
+                        <div class="row">
+                            <div class="col-sm-6 room-name">
+                                <span class="main-color">Test Room</span>
+                            </div>
+                            <div class="col-sm-6 room-people">
+                                <span class="main-color">There are 5 people online</span>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Bootstrap Javascript Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <script src="js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+/*
+    Black: #0B0C10
+    Dark-gray: #1F2833
+    Light-gray: #C5C6C7
+    Light-blue: #66FCF1
+    Dark-Blue: #45A29E
+*/
+
+body {
+    background-color: #1F2833;
+    margin: 0;
+    padding: 0;
+}
+
+.main-color {
+    color: #66FCF1 !important;
+}
+
+#global-chat-container {
+   
+    height: 85vh;
+    align-items: flex-end;
+    margin: 0;
+    
+}
+
+#global-chat-container-p {
+    height: 100%;
+    margin: 20px;
+    border: 3px solid #45A29E;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#global-chat-inputs {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.message-text {
+    border: 1px solid #45A29E;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    color: #66FCF1;
+    padding: 5px;
+    background-color: #0B0C10;
+}
+
+.light-gray {
+    background-color: #C5C6C7 !important;
+}
+
+#global-chat-input {
+    background-color: #0B0C10;
+    color: #66FCF1;
+    border: 1px solid #45A29E;
+    border-radius: 4px;
+}
+
+.inputs {
+    background-color: #0B0C10 !important;
+    color: #66FCF1 !important;
+    border: 1px solid #45A29E;
+    border-radius: 4px;  
+    margin-bottom: 10px;
+}
+
+.inputs-nm {
+    background-color: #0B0C10 !important;
+    color: #66FCF1 !important;
+    border: 1px solid #45A29E;
+    border-radius: 4px;  
+}
+
+.inputs:focus {
+    background-color: #0B0C10;
+}
+
+#global-chat-title {
+    color: #66FCF1;
+    padding: 10px 0;
+}
+
+.dark-blue {
+    background-color: #45A29E !important;
+}
+
+.dark-blue-btn {
+    border: 1px solid #45A29E;
+    color: #45A29E !important;
+    background-color: #0B0C10;
+}
+
+.dark-blue-btn:hover {
+    color: white !important;
+    background-color: #66FCF1 !important;
+}
+
+.light-blue-btn {
+    border: 1px solid #45A29E;
+    color: #66FCF1 !important;
+    background-color: #0B0C10;
+}
+
+.light-blue-btn:hover {
+    color: white !important;
+    background-color: #66FCF1 !important;
+}
+
+.light-blue {
+    color: #66FCF1;
+}
+
+.dark-background {
+    background-color: #0B0C10;
+}
+
+.medium-background {
+    background-color: #1F2833;
+}
+
+.centered {
+    text-align: center;
+}
+
+.vertical-center {
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.create-room-container {
+    margin-top: 50px;
+    margin-bottom: 5vh;
+    padding: 0 100px;
+}
+
+#private-chat-rooms {
+    margin-bottom: 5vh;
+    padding: 0 100px;
+}
+
+#public-chat-rooms {
+    padding: 0 100px;
+}
+
+.chatroom {
+    border: 1px solid #45A29E;
+    background-color: #0B0C10;
+    border-radius: 4px;
+    height: 5vh;
+}
+
+.room-name {
+    border-right: 1px solid #45A29E; 
+    height: 5vh;
+}
