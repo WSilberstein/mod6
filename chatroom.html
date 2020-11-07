@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+
+    <!-- Bootstrap and Jquery UI stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+    <!-- Navbar to get to other pages -->
+    <nav class="navbar dark-background">
+        <div class="container-fluid">
+
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-4" style="text-align: center;">
+                <a href="index.html"><h3 class="main-color centered">Chatroom</h1></a>
+            </div>
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-2">
+                <!-- Logout button -->
+                            <span class="input-group-text inputs-nm" id="show-username">Welcome USERNAME</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3" >
+                <div id="rooms-container">
+                    <h3 class="main-color centered" style="margin-top: 5vh;">Rooms</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div id="chat-container" class="col-sm-6">
+                    <div id="chat-container-p">
+                        <h3 class="main-color centered">Chatroom</h3>
+                        <div id="chat-inputs" class="input-group mb-3">
+                            <input class="form-control" type="text" id="chat-input"/>
+                            <button class="btn dark-blue-btn" type="button" onclick="sendMessage()">send</button>
+                        </div>
+                        <div id="chat">
+                            <div id="chatlog"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="online-users-container">
+                    <h3 class="main-color centered" style="margin-top: 5vh;">Online Users</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Javascript Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <script src="js/login.js"></script>
+
+</body>
+</html>

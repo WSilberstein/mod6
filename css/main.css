@@ -25,6 +25,15 @@ body {
     
 }
 
+#chat-container {
+   
+    height: 85vh;
+    align-items: flex-end;
+    margin: 0;
+    min-width: 100%;
+    
+}
+
 #global-chat-container-p {
     height: 100%;
     margin: 20px;
@@ -33,7 +42,20 @@ body {
     padding: 20px;
 }
 
+#chat-container-p {
+    height: 100%;
+    margin: 20px;
+    border: 3px solid #45A29E;
+    border-radius: 15px;
+    padding: 20px;
+}
+
 #global-chat-inputs {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#chat-inputs {
     margin-top: 10px;
     text-align: center;
 }
@@ -52,6 +74,13 @@ body {
 }
 
 #global-chat-input {
+    background-color: #0B0C10;
+    color: #66FCF1;
+    border: 1px solid #45A29E;
+    border-radius: 4px;
+}
+
+#chat-input {
     background-color: #0B0C10;
     color: #66FCF1;
     border: 1px solid #45A29E;

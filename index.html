@@ -22,15 +22,15 @@
             }
            let text_container = document.createElement('div');
            text_container.classList.add('message-text');
-           text_container.appendChild(document.createTextNode(data['message']));
+           text_container.appendChild(document.createTextNode(data['user'] + " : " + data['message']));
 
            document.getElementById("chatlog").appendChild(text_container);
 
         });
   
         function sendMessage(){
-           var msg = document.getElementById("global-chat-input").value;
-           socketio.emit("message_to_server", {message:msg});
+           let msg = document.getElementById("global-chat-input").value;
+           socketio.emit("message_to_server", {message:msg, user:username});
         }
         
     </script>
