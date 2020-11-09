@@ -95,16 +95,16 @@
                 <div class="create-room-container">            
                     <h3 class="main-color centered">Create A Chat Room</h3>          
                       <div class="input-group">
-                        <input type="text" class="form-control inputs" placeholder="Chatroom Name">
+                        <input type="text" class="form-control inputs" placeholder="Chatroom Name" id="create-chat-room-name">
                         <div class="input-group-append">
                           <button type="button" class="btn dark-blue-btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="sr-only">Toggle Dropdown</span>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item">Public</a>
-                            <a class="dropdown-item">Private</a>
+                            <button id="create-chat-room-public-btn" class="dropdown-item create-chat-room-security dark-blue-btn" value='selected'>Public</button>
+                            <button id="create-chat-room-private-btn" class="dropdown-item create-chat-room-security dark-blue-btn">Private</button>
                           </div>
-                          <button type="button" class="btn dark-blue-btn">Create</button>
+                          <button type="button" class="btn dark-blue-btn" id="create-chat-room-btn">Create</button>
                         </div>
                       </div>
                 </div>
@@ -162,6 +162,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
   <script src="js/login.js"></script>
+  <script src="js/rooms.js"></script>
 
 </body>
 </html>
