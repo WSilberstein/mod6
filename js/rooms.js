@@ -10,14 +10,10 @@ $('#create-chat-room-btn').click(function() {
 
     const data = {room: room, host: username, isPublic: isPublic}
 
-    for(option in options) {
-        console.log(option.checked)
-    }
-
     if(username != null) {
         
         if(isPublic) {
-
+            $('#main-content').html('');
             socketio.emit('create', data);
 
         } else {

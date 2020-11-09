@@ -54,7 +54,7 @@ io.sockets.on("connection", function(socket){
 	socket.on('create', function (data) {
 		console.log(data)
 		socket.join(data.room);
-		createPublicRoom(data.host, data.room);
+		createPublicRoom(data.host, data.room, socket);
 		console.log("Room " + data.room + " has been created");
 	});
 
@@ -75,10 +75,10 @@ io.sockets.on("connection", function(socket){
 	});
 });
 
-function createPublicRoom(host, name) {
+function createPublicRoom(host, name, socket) {
 	console.log("Createing room document")
-	fs.appendFile('chatrooms.html', chatroom.html, function (err) {
-		if (err) throw err;
-		console.log('Saved!');
-	  });
+	fs.readFile('rooms/default.html', function(err, data) {
+		console.log(data);
+		socket.emit('send-user-room', data);
+	});
 }
